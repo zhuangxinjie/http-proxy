@@ -1,0 +1,23 @@
+server:
+  port: 18080
+
+spring:
+  application:
+    name: mq-http-proxy-provider
+  activemq:
+    user: admin
+    password: admin
+    broker-url: tcp://192.168.28.17:61616
+    in-memory: false
+    pool:
+      enabled: true
+      max-connections: 5
+      idle-timeout: 30
+
+queue:
+  name: zb.zj.ETM.ETM.QUEUE
+image:
+  queue:
+    name: pull-image
+app:
+  debug: true

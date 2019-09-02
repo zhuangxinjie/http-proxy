@@ -1,0 +1,27 @@
+server:
+  port: 18081
+
+spring:
+  application:
+    name: mq-http-proxy-consumer
+  activemq:
+    user: ${mq.user}
+    password: ${mq.password}
+    broker-url: tcp://${mq.host}:${mq.port}
+    in-memory: false
+    pool:
+      enabled: true
+      max-connections: 100
+      idle-timeout: 60
+
+queue:
+  name: ${queue.name}
+cluster:
+  address: ${cluster.address}
+harbor:
+  address: ${harbor.address}
+k8s:
+  conf:
+    path: ${k8s.conf.path}
+app:
+  debug: false

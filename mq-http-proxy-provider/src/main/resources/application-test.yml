@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: mq-http-proxy-provider
+  activemq:
+    user: ${mq.user}
+    password: ${mq.password}
+    broker-url: tcp://${mq.host}:${mq.port}
+    in-memory: false
+    pool:
+      enabled: true
+      max-connections: 5
+      idle-timeout: 30
+queue:
+  name: ${mq.queue}
+
+app:
+  debug: true

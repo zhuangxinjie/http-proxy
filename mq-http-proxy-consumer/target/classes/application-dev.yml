@@ -1,0 +1,28 @@
+server:
+  port: 18081
+
+spring:
+  application:
+    name: mq-http-proxy-consumer
+  activemq:
+    user: admin
+    password: admin
+    broker-url: tcp://192.168.28.17:61616
+    in-memory: false
+    pool:
+      enabled: true
+      max-connections: 100
+      idle-timeout: 60
+
+queue:
+  name: zb.zj.ETM.ETM.QUEUE
+app:
+  debug: true
+cluster:
+  address: https://192.168.3.105:6443
+k8s:
+  conf:
+    path: "C:/workspace/http-proxy/admin.conf"
+image:
+  queue:
+    name: pull-image
